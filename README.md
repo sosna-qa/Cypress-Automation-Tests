@@ -41,3 +41,9 @@ The scenario covers navigating to the products page, selecting a product, adding
 ```bash
 npm install
 npx cypress open
+```
+or headless mode:
+
+```bash
+npx cypress run
+
