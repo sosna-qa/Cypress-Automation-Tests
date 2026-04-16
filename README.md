@@ -1,38 +1,79 @@
-# Cypress E2E Test – Add Product to Cart
+# Cypress E2E Automation Tests
 
-## Project description
-This test automates a user flow on https://automationexercise.com/
-The scenario covers navigating to the products page, selecting a product, adding it to the cart, and verifying the cart page.
+## Project Description
+This project contains end-to-end (E2E) automated tests written in Cypress for the demo web application:  
+https://automationexercise.com/
 
----
-
-## Test scenario
-
-### Test: Add product to cart flow
-
-#### Steps:
-1. Open homepage
-2. Navigate to "Products" page
-3. Select the second product (Men T-shirt)
-4. Open product details page
-5. Add product to cart
-6. Open shopping cart
+The goal of this project is to demonstrate QA automation skills, including UI testing, form validation, negative testing, and full user flow testing.
 
 ---
 
-## Expected result
-- User is redirected to correct products page
-- Product details page is displayed correctly
-- Product is successfully added to cart
-- Cart page is displayed after navigation
-- URL changes match expected pages
+## Test Scenarios
+
+### 1. Add Product to Cart Flow
+This test verifies the shopping cart functionality.
+
+**Steps:**
+- Open homepage
+- Navigate to "Products" page
+- Select the second product
+- Open product details page
+- Add product to cart
+- Open cart page
+
+**Expected result:**
+- User is successfully redirected to the correct pages
+- Product is added to the cart successfully
+- Cart page is displayed correctly
 
 ---
 
-## Tech stack
+### 2. User Registration Flow
+This test verifies user account creation functionality.
+
+**Steps:**
+- Open homepage
+- Navigate to Signup / Login page
+- Enter user details
+- Fill account information form
+- Submit registration form
+
+**Expected result:**
+- Account is created successfully
+- User is successfully logged in
+- Success message is displayed
+
+---
+
+### 3. Login Negative Test
+This test verifies login validation with incorrect credentials.
+
+**Steps:**
+- Open homepage
+- Navigate to Login page
+- Enter invalid email and password
+- Attempt to log in
+
+**Expected result:**
+- Error message is displayed
+- User is not logged in
+
+---
+
+## Tech Stack
 - Cypress
 - JavaScript
 - Node.js
+
+---
+
+## Project Structure
+
+```text
+cypress/e2e/
+├── add_to_cart.cy.js
+├── register.cy.js
+├── login_negative.cy.js
 
 ---
 
