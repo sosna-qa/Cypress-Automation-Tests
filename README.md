@@ -69,12 +69,12 @@ This test verifies login validation with incorrect credentials.
 
 ## Project Structure
 
-```text
+```
 cypress/e2e/
 ├── add_to_cart.cy.js
 ├── register.cy.js
 ├── login_negative.cy.js
-
+```
 ---
 
 ## How to run tests
