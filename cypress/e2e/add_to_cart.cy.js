@@ -2,31 +2,33 @@ describe('Add product to cart flow', () => {
 
   it('should add second product to cart and verify navigation', () => {
 
-    // ad1: wejście na stronę i kliknięcie Products
+    // Step 1: Open homepage
     cy.visit('/');
+
+    // Step 2: Navigate to Products page
     cy.get('a[href="/products"]').click();
 
-    // ad2: weryfikacja URL
+    // Step 3: Verify URL is correct (Products page)
     cy.url().should('include', '/products');
     cy.url().should('eq', 'https://automationexercise.com/products');
 
-    // ad3: kliknięcie "View Product" dla drugiego produktu
+    // Step 4: Click "View Product" for the second product
     cy.get('.features_items .product-image-wrapper')
-      .eq(1) // drugi produkt (index 1)
+      .eq(1) // second product (index 1)
       .contains('View Product')
       .click();
 
-    // ad4: weryfikacja URL produktu
+    // Step 5: Verify product details page URL
     cy.url().should('include', '/product_details/2');
     cy.url().should('eq', 'https://automationexercise.com/product_details/2');
 
-    // ad5: kliknięcie Add to cart
+    // Step 6: Click "Add to cart"
     cy.contains('Add to cart').click();
 
-    // ad6: weryfikacja czy pojawił się View Cart (modal)
+    // Step 7: Verify that "View Cart" button is visible (modal appears)
     cy.contains('View Cart').should('be.visible');
 
-    // ad7: kliknięcie View Cart i sprawdzenie URL
+    // Step 8: Navigate to cart page and verify URL
     cy.contains('View Cart').click();
     cy.url().should('include', '/view_cart');
     cy.url().should('eq', 'https://automationexercise.com/view_cart');
